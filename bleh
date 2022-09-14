@@ -1,8 +1,18 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, IntroEnabled = true, IntroText = "Key System"})
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Grayy12/KeySys/main/Protected%20(4).lua",true))()
 
 getgenv().KeyInput = "string"
+
+local Tab = Window:MakeTab({
+	Name = "Get Your Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Dm vxrus#0449 on discord to get the key!")
+Tab:AddParagraph("Once you get your Key click on Main!")
 
 function Destroy()
     game:GetService("CoreGui").Orion:Destroy()
@@ -12,7 +22,7 @@ function CheckKey()
     if sf_key == KeyInput then
         Destroy()
         local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-        local Window = OrionLib:MakeWindow({Name = "vxrus Script Hub", HidePremium = false, SaveConfig = true, IntroEnabled = true, IntroText = "vxrus Script Hub"})
+        local Window = OrionLib:MakeWindow({Name = "vxrus - ScriptHub/Version 2.1", HidePremium = false, SaveConfig = true, IntroEnabled = true, IntroText = "vxrus Script Hub"})
 
         OrionLib:MakeNotification({
             Name = "Discord Server",
@@ -22,9 +32,70 @@ function CheckKey()
         })
 
         local Tab = Window:MakeTab({
+            Name = "Info",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })    
+
+        Tab:AddParagraph("Join our Discord server https://discord.gg/sWZJPJ9kae <3")
+        Tab:AddParagraph("Theres gonna be a lot of updates almost 24/7 :D")
+
+        Tab:AddButton({
+            Name = "Copy Discord",
+            Callback = function()
+                setclipboard("https://discord.gg/sWZJPJ9kae")
+                toclipboard("https://discord.gg/sWZJPJ9kae")
+                CopyDiscord()
+              end 
+        })
+
+        function CopyDiscord()
+            OrionLib:MakeNotification({
+                Name = "Discord",
+                Content = "Discord Copied!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+
+        local Tab = Window:MakeTab({
+            Name = "Script Hubs",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+
+        Tab:AddButton({
+            Name = "V.G Hub",
+            Callback = function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+              end    
+        })
+
+        Tab:AddButton({
+            Name = "Eclipse Hub",
+            Callback = function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script'),true))()()
+              end    
+        })
+
+        Tab:AddButton({
+            Name = "DarkHub",
+            Callback = function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+              end    
+        })
+
+        local Tab = Window:MakeTab({
             Name = "Free Scripts",
             Icon = "rbxassetid://4483345998",
             PremiumOnly = false
+        })
+
+        Tab:AddButton({
+            Name = "BBoyGUI v3 (YBA)",
+            Callback = function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/zakater5/LuaRepo/main/YBA/v3.lua"))()
+              end    
         })
 
         Tab:AddButton({
@@ -88,13 +159,6 @@ function CheckKey()
                 Callback = function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()()
 
-                  end    
-            })
-
-            Tab:AddButton({
-                Name = "Eclipse Hub",
-                Callback = function()
-                    loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script'),true))()()
                   end    
             })
 
@@ -209,13 +273,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-frid
                 Callback = function()
                     loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/z4gs/scripts/master/Ro-Ghoul%20Auto%20Farm.lua")))()
 
-                  end    
-            })
-
-            Tab:AddButton({
-                Name = "V.G Hub",
-                Callback = function()
-                    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
                   end    
             })
 
@@ -658,30 +715,17 @@ webhook = nil
             Tab:AddButton({
                 Name = "Destroy Script Hub",
                 Callback = function()
-                    OrionLib:Destroy()
+                    game.CoreGui.Orion:Destroy()
                   end    
             })
 
             local Tab = Window:MakeTab({
-                Name = "Color Slider",
+                Name = "Config",
                 Icon = "rbxassetid://4483345998",
                 PremiumOnly = false
             })
 
-            Tab:AddColorpicker({
-                Name = "Colorpicker",
-                Default = Color3.fromRGB(255, 0, 0),
-                Callback = function(Value)
-                    print(Value)
-                end	  
-            })
-
-            Tab:AddButton({
-                Name = "Change Color",
-                Callback = function()
-                    ColorPicker:Set(Color3.fromRGB(255,255,255))
-                  end    
-            })
+            Tab:AddParagraph("Still working on Configs!")
     end
 end
 
